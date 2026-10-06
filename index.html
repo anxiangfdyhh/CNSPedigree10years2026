@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-page-node-id="mZrrcu4R2GIBFgtCwVToIC">
+<head data-page-node-id="yjqwV8s38xIDmZv4VkUFoH">
+<meta charset="UTF-8" data-page-node-id="rDp93VoGoJXC5knRYCOiio">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="H4Nosn2k1RmRe3m5h00Rap">
+<title>Who Publishes in Flagship Journals? Nobel Lineage of CNS Neuroscience Papers (2016–2025)</title>
+<style>
+  :root{
+    --red:#A6242F; --red-bg:#F6E8E7; --blue:#2E5E8C; --blue-bg:#E8EFF7;
+    --green:#4F7A28; --green-bg:#EFF3E6; --gray:#8A8A8A;
+    --ink:#1A1D21; --muted:#6B7280; --line:#E2E4E8; --bg:#F4F4F2; --card:#FFFFFF;
+    --serif:Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 60px}
+
+  header{background:#FFFFFF;border-bottom:1px solid var(--line);padding:40px 0 0;margin-bottom:28px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  header .wrap{padding-bottom:0}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.24em;color:var(--red);margin-bottom:12px}
+  h1{font-family:var(--serif);font-size:34px;font-weight:700;line-height:1.3;color:#000;letter-spacing:-.01em;max-width:840px}
+  .standfirst{margin-top:16px;max-width:810px;font-size:15.5px;color:#3D434B;line-height:1.75}
+  .src{margin-top:16px;font-size:12.5px;color:var(--muted)}
+
+  nav{display:flex;gap:0;margin-top:28px;border-bottom:2px solid #D8DADF}
+  nav button{font:inherit;font-size:15px;padding:12px 24px;border:none;background:transparent;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+  nav button.on{color:#000;font-weight:700;border-bottom-color:var(--red)}
+  nav button:hover:not(.on){color:var(--ink)}
+
+  body[data-view="overview"] #view-papers{display:none}
+  body[data-view="papers"] #view-overview{display:none}
+
+  .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin-bottom:26px}
+  .stat{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--red);border-radius:6px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .stat.blue{border-top-color:var(--blue)} .stat.green{border-top-color:var(--green)}
+  .stat .v{font-size:34px;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums}
+  .stat .v-unit{font-size:17px;font-weight:600;margin-left:5px;opacity:.7}
+  .stat .v-pct{font-size:16px;font-weight:700;margin-left:7px;opacity:.85}
+  .stat .l{font-size:12.5px;color:var(--muted);margin-top:5px}
+  .stat.red .v{color:var(--red)} .stat.blue .v{color:var(--blue)} .stat.green .v{color:var(--green)}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px 28px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .panel h2{font-family:var(--serif);font-size:21px;font-weight:700;color:#000;margin-bottom:16px}
+  .panel h2 .sub{font-weight:400;font-size:12.5px;color:var(--muted);margin-left:10px}
+
+  .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
+  .chart h3{font-size:16px;font-weight:700;color:#000;line-height:1.45;margin-bottom:16px;padding-bottom:9px;border-bottom:2px solid #E8E3DD}
+  .chart .foot{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.5}
+
+  /* donut */
+  .donut{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+  .donut svg{flex:0 0 auto}
+  .donut .legend{font-size:13.5px;line-height:2.15}
+  .donut .legend .sw{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:8px;vertical-align:-2px}
+  .donut .legend b{font-variant-numeric:tabular-nums;font-size:15px}
+  .donut .legend .pctv{font-variant-numeric:tabular-nums;font-weight:700;color:var(--red)}
+
+  /* vertical columns */
+  .cols{display:flex;align-items:flex-end;gap:4%;height:210px;padding:0 4px;position:relative}
+  .cols .col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;text-align:center;min-width:0}
+  .cols .col .num{font-size:15px;font-weight:800;margin-bottom:3px;font-variant-numeric:tabular-nums}
+  .cols .col .pct{font-size:14px;font-weight:800;color:var(--red);margin-bottom:4px;font-variant-numeric:tabular-nums}
+  .cols .col .bar{border-radius:3px 3px 0 0;min-height:2px}
+  .cols .refline{position:absolute;left:0;right:0;border-top:2px dashed #B0876A;font-size:11px;font-weight:700;color:#8A6A50;text-align:right;padding-top:2px}
+  .cols-wrap{position:relative}
+  .cols-wrap .xlabels{display:flex;gap:4%;padding:0 4px;margin-top:8px}
+  .cols-wrap .xlabels div{flex:1;text-align:center;font-size:12px;color:#3D434B;line-height:1.4;min-width:0}
+
+  /* line chart */
+  .linebox svg{width:100%;height:auto}
+
+  /* horizontal bars (subfield) */
+  .bar-row{display:grid;grid-template-columns:170px 1fr 104px;align-items:center;gap:8px;margin-bottom:8px;font-size:12.5px}
+  .bar-row .name{color:#3D434B;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bar-row .track{background:#F0F1F3;border-radius:3px;height:22px;position:relative}
+  .bar-row .fill{height:100%;border-radius:3px;min-width:2px}
+  .bar-row .val{font-variant-numeric:tabular-nums;color:var(--ink);display:flex;flex-direction:column;align-items:flex-end;line-height:1.3}
+  .bar-row .val b{font-size:15px;font-weight:800;color:var(--red)}
+  .bar-row .val .pct{font-size:12px;color:var(--muted)}
+
+  /* rate cards */
+  .ratecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:4px 0 18px}
+  .ratecard{border:1px solid var(--line);border-top:3px solid var(--red);border-radius:6px;padding:18px 20px;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .ratecard .rv{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums}
+  .ratecard .rl{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+
+  .filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+  select,input[type=text]{font:inherit;font-size:13px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);outline:none}
+  select:focus,input:focus{border-color:var(--blue)}
+  input[type=text]{width:220px}
+  .chip{font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);cursor:pointer;background:#fff;user-select:none}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .count{font-size:13px;color:var(--muted);margin-left:auto}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{font-size:12px;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);font-weight:600;white-space:nowrap}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr.row{cursor:pointer}
+  tr.row:hover{background:#FAFBFC}
+  .title-cell{max-width:430px}
+  .t-j{white-space:nowrap;font-weight:600}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;white-space:nowrap}
+  .b-desc{background:var(--red-bg);color:var(--red)} .b-non{background:var(--blue-bg);color:var(--blue)} .b-lau{background:var(--green-bg);color:var(--green)} .b-oth{background:#F0F1F3;color:#4B5563}
+  .mesh-cell{max-width:240px;color:var(--muted);font-size:12px}
+  .mesh-cell span{display:inline-block;margin:0 6px 2px 0}
+  .pmid-link{color:var(--blue);text-decoration:none;font-size:12px;white-space:nowrap}
+  .pmid-link:hover{text-decoration:underline}
+
+  tr.detail td{background:#FBFAF7;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .d-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:26px}
+  .d-title{font-size:15px;font-weight:600;margin-bottom:10px;line-height:1.5}
+  .d-lab{font-size:11.5px;color:var(--muted);letter-spacing:.08em;margin:12px 0 4px}
+  .d-val{font-size:13.5px}
+  .d-mesh span{display:inline-block;background:#F0F1F3;border-radius:5px;padding:2px 9px;margin:0 6px 5px 0;font-size:12px}
+  .chain{list-style:none;margin-top:4px}
+  .chain li{position:relative;padding:0 0 14px 24px;font-size:13px}
+  .chain li::before{content:"";position:absolute;left:6px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--red);opacity:.55}
+  .chain li::after{content:"";position:absolute;left:9.5px;top:15px;bottom:-2px;width:1.5px;background:var(--line)}
+  .chain li:last-child::after{display:none}
+  .chain li:first-child{font-weight:600}
+  .chain li:first-child::before{background:var(--green);opacity:1}
+  .chain li:last-child{font-weight:600}
+  .chain .nobel-tag{font-size:10.5px;background:var(--green-bg);color:var(--green);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+  .chain .h-tag{font-size:10.5px;background:var(--blue-bg);color:var(--blue);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+  .chain .gen-note{font-size:11px;color:var(--muted);margin-left:6px}
+  .d-pubmed{display:inline-block;margin-top:10px;font-size:13px;color:#fff;background:var(--blue);padding:7px 16px;border-radius:8px;text-decoration:none}
+  .d-pubmed:hover{opacity:.9}
+  .empty-chain{font-size:12.5px;color:var(--muted);font-style:italic}
+
+  .pager{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+  .pager button{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 13px;cursor:pointer}
+  .pager button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .pager button:disabled{opacity:.35;cursor:default}
+
+  .goto-papers{display:inline-block;margin-top:14px;font-size:14px;color:#fff;background:var(--red);padding:10px 26px;border-radius:10px;text-decoration:none;cursor:pointer;border:none;font-family:inherit}
+  .goto-papers:hover{opacity:.92}
+
+  footer{font-size:12px;color:var(--muted);line-height:1.8;border-top:1px solid var(--line);padding-top:18px}
+  .note{font-size:12.5px;color:var(--muted);background:var(--blue-bg);border-radius:10px;padding:12px 16px;margin-bottom:22px}
+
+  @media(max-width:820px){.d-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:110px 1fr 88px;font-size:11.5px}.cols{height:150px}}
+</style>
+</head>
+<body data-view="overview" data-page-node-id="Pq9D7FChEDvywZsHmAuAwc">
+
+<header data-page-node-id="rtrBsEJyXP3NsMTssGJn6C">
+  <div class="wrap" data-page-node-id="FqA83l3icmUDsk1jmmTWmC">
+    <div class="kicker" data-page-node-id="x5GsbYvbVCUm9USsbxmrra">ACADEMIC LINEAGE × FLAGSHIP JOURNALS · DATA ANALYSIS</div>
+    <h1 data-page-node-id="4p6E3aB6ACqirvgiMfYkZU">Who Publishes in Flagship Journals? The Nobel Lineage of CNS Neuroscience Papers (2016–2025)</h1>
+    <div class="standfirst" data-page-node-id="PDJfgrThmUGoFwOKtBte9F">Over the decade 2016–2025, Nature, Science and Cell together published roughly 3,500 neuroscience research papers. We placed the last (corresponding) author of each paper into the Academic Family Tree and traced the mentor lineage upward: <b data-page-node-id="nz6qBTPxY9Nua7nXpvPhzQ">in about 4 of every 5 papers, five generations of mentors lead back to a Nobel laureate</b> — and this share has barely moved in ten years. Among neuroscience researchers within the tree itself (the Neurotree subset of the Academic Family Tree), only 42% can trace such a lineage. Pedigree does not prove paper quality — but it does predict who publishes in flagship journals.</div>
+    <div class="src" data-page-node-id="liXsCjD6pmbGWRn2rpmvX2">How to read these numbers: ① Papers whose authorship cannot be resolved — ambiguous names, or authors absent from the tree — are excluded rather than guessed (hence "papers with resolvable lineage"); ② The last (corresponding) author is identified as the final author of the byline; ③ The 42% baseline is not a field-wide survey — it is the share among neuroscience researchers within the tree itself (its Neurotree subset); the tree skews toward elite lineages, and the two biases point in opposite directions — both are documented in the Methods at the bottom of the page.</div>
+    <nav data-page-node-id="WB4jc9HnR736HxlfbhBIOl">
+      <button id="tab-overview" class="on" data-page-node-id="BSSTxROpOEpdpyBUuM0EyM">Overview</button>
+      <button id="tab-papers" data-page-node-id="VWcs3kIFnnwL7HbuCZrd5z">Papers (2,688)</button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" data-page-node-id="2V76ztIqDSSHMczta4uihQ">
+
+  <div id="view-overview" data-page-node-id="zJUK4DUYQDZ7RmVidMGqmF">
+    <div class="note" id="scopeNote" data-page-node-id="dehMckt8g61HHKAh87SwDU"></div>
+
+    <div class="statgrid" id="statgrid" data-page-node-id="QjS3mF80ITrLhQDQ738xjl"></div>
+
+    <div class="panel" data-page-node-id="pTXCL0Q5w85CfeRLZIltPB">
+      <h2 data-page-node-id="Ffg1N5PkPFJjRfyQFgIJPz">Key charts <span class="sub" data-page-node-id="WFxmRso0IYC2GDdx9m0HBM">linked to the filters on the Papers page (per-capita rates are a fixed snapshot)</span></h2>
+      <div class="charts" data-page-node-id="s57vQB16uBUo9xb6HzHH8A">
+        <div class="chart" id="ch-comp" data-page-node-id="yaPSFWqeisFhbfbUFVGNEi"></div>
+        <div class="chart" id="ch-gen" data-page-node-id="H3FhqGCVu4m5DUgF3r5Ovy"></div>
+        <div class="chart" id="ch-journal" data-page-node-id="bq1bCcTkPE7r9We0YbDKzM"></div>
+        <div class="chart" id="ch-trend" style="grid-column:1/-1" data-page-node-id="QkcNrDlRmodp6rMXx1BjDX"></div>
+      </div>
+      <button class="goto-papers" id="gotoPapers" data-page-node-id="531vKDt6JZO3oRtVkA0afp">Browse all paper details →</button>
+    </div>
+
+    <div class="panel" data-page-node-id="16w0SFpqYPw4e1lQ6m9JTc">
+      <h2 data-page-node-id="lnv5tI94lDWtLVapJldgK5">Is it just that descendants are numerous? <span class="sub" data-page-node-id="TaQ6DKyHFFX0NPfSD2S7en">a per-capita accounting (2016–2025)</span></h2>
+      <div class="ratecards" id="ratecards" data-page-node-id="jt2oTbc49FyYAY1VyVOFGI"></div>
+      <div class="charts" data-page-node-id="tLK1otlnwrfBdD7i2QDNsO">
+        <div class="chart" id="ch-genrate" data-page-node-id="TmKgBAeg6yCcGwHhMjl5Qz"></div>
+      </div>
+      <div style="font-size:13px;color:#3A3F47;line-height:1.8" data-page-node-id="inG39AXoc0OtVj6bjSNUM4">
+        <p data-page-node-id="Hto5K4DMG1buhDzDMgqDMm">Seeing "81%", a natural question follows: <strong data-page-node-id="NCx48qLRx9FDhHrzBuL3XI">is it simply that Nobel lineages contain more people?</strong> So here is a different accounting — count people, not papers. Among every 100 neuroscientists in the tree, how many served as last (corresponding) author of a CNS flagship paper in 2016–2025? The answer: in Nobel lineages, <strong data-page-node-id="usmaKXfGqYIsG8bnn2GI2u">1 in 75 (1.33%)</strong>; among other scholars, <strong data-page-node-id="zHEbB2OWZnlcJOdHEEE1FZ">only 1 in 600 (0.17%)</strong> — <strong data-page-node-id="5fME5HtNIkWhD2bYEGdGxJ">roughly an 8-fold difference</strong>. The lineages are indeed large, but the <strong data-page-node-id="kkNRHGCecnGUHLe3Dg0Zx8">per-capita</strong> opportunity is also far greater.</p>
+        <p data-page-node-id="bVUbtiKZNkqueaorOZWlEX">By generation it is even clearer: a laureate's direct students (Gen 1) produce one CNS last author in roughly every 14 people (7.37%), declining with each generation — yet by Gen 5, the rate is still 0.31%, nearly twice the control. The lineage "halo" fades generation by generation, but within five generations it never disappears.</p>
+        <p data-page-node-id="Z3ySZ9rtTsqHJGxoPXErbg"><strong data-page-node-id="DXDPVZdeZHoj5RiNwo8rMd">How this accounting works</strong>: only scholars tagged as neuroscience in the tree are counted, so numerator and denominator match (869 lineage members served as last authors / 65,429 lineage members in total; others 151 / 90,121). About three in ten CNS last authors come from chemistry, physics and similar backgrounds (untagged as neuroscience in the tree); they fall outside this accounting — they belong to other disciplinary populations, whose rates should be judged against their own population bases. Including them lowers the multiplier from 7.9 to 4.6 — a more conservative bound that leaves the conclusion unchanged. Two further numbers of interest: among neuroscience-background CNS last authors, 85% come from Nobel lineages; among cross-disciplinary ones, 60% do.</p>
+        <p style="color:#6B7280;font-size:12px" data-page-node-id="5FN5KIVFeq7VO4CTkc8s9U">Tree snapshot 2025-11-10: lineage members by generation 1,817 / 9,415 / 20,005 / 20,798 / 13,394; corresponding CNS last (corresponding) authors 134 / 299 / 268 / 127 / 41; laureates themselves counted separately. The tree is crowdsourced and coverage is biased; collection intensity may also differ between the two groups, so the multipliers should be read as approximate.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Per-capita flagship-journal rate by generation <span class="sub">Nobel descendant generations 1–5 vs non-descendants (2016–2025)</span></h2>
+      <div class="ratecards" id="branchRateCards"></div>
+      <div style="font-size:13px;color:#3A3F47;line-height:1.8;margin-top:14px">
+        <p>The closer an author sits to a Nobel laureate in the mentoring chain, the higher their per-capita rate of publishing in a flagship journal — declining from <strong>7.37%</strong> (Gen 1, a laureate's direct students) to <strong>3.18%</strong> (Gen 2) to <strong>1.34%</strong> (Gen 3) to <strong>0.61%</strong> (Gen 4) to <strong>0.31%</strong> (Gen 5), compared with <strong>0.17%</strong> among non-descendants. Even at the fifth generation, the rate is still nearly twice the control.</p>
+        <p style="color:#6B7280;font-size:12px;margin-top:8px">Only neuro-tagged scholars are counted (numerator and denominator matched). Generation = minimum mentor-student distance to the nearest Nobel laureate (BFS upward). Non-descendant control = scholars with no Nobel ancestor within five generations. Population by generation: 1,817 / 9,415 / 20,005 / 20,798 / 13,394; non-descendant 90,121. CNS last authors: 134 / 299 / 268 / 127 / 41 / non-descendant 151.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="view-papers">
+    <div class="panel">
+      <h2>How many Nobel lineages does a single author belong to? <span class="sub">multi-branch analysis (2016–2025)</span></h2>
+      <div class="ratecards" id="branchCards"></div>
+      <div style="font-size:13px;color:#3A3F47;line-height:1.8;margin-top:14px">
+        <p>Most Nobel-descendant CNS last authors trace back to <strong>a single</strong> Nobel laureate ancestor within five generations. But some belong to <strong>two or more</strong> independent Nobel lineages simultaneously — their mentors (or mentors' mentors) descend from different laureates. The more branches an author belongs to, the more deeply embedded they are in the Nobel academic network.</p>
+        <p style="color:#6B7280;font-size:12px;margin-top:8px">Branch count = number of independent mentor spines leading to distinct Nobel laureates within five generations. For each of the author's direct mentors, we trace upward; if that mentor line reaches a Nobel laureate, it counts as one branch. Only the nearest laureate per mentor spine is counted (avoiding network-explosion inflation). Only authors classified as Nobel descendants (Gen 1–5) are counted; laureates themselves are excluded.</p>
+      </div>
+    </div>
+    <div class="panel" id="papersPanel" data-page-node-id="2loAQCjqKC5Gngj0Ke3JDA">
+      <h2 data-page-node-id="CSRcNRNWayLhIGxGCBjM9j">Paper details <span class="sub" data-page-node-id="YduRhkpQf4uzCWZIMUzm7A">click any row for the lineage chain and subfield</span></h2>
+      <div class="filters" data-page-node-id="tfcTZz6h26BLV8In7miGwZ">
+        <select id="f-journal" data-page-node-id="I0KlmQjiRkN8iK3eVvpAaq"><option value="" data-page-node-id="4eAYhjp3NpZUwMv3eCswFc">All journals</option><option data-page-node-id="R4iKHDd58OKGSoRlsvwQu6">Nature</option><option data-page-node-id="SMwEf5u7iWeY5pZYWcPotE">Science</option><option data-page-node-id="5GrXUcY7BSNLEE9QeNbA3x">Cell</option></select>
+        <select id="f-class" data-page-node-id="UOV4ojOYDlKeWwCMFFTwOZ"><option value="" data-page-node-id="Gu7qUHW7py8ZyzMRcVTBsD">All classes</option><option value="诺奖得主本人" data-page-node-id="RFEuZACrKZFfDoObWOHA0R">Nobel laureate (self)</option><option value="d" data-page-node-id="tBZpHa9lt9eZa7NkdpVvrE">Descendants (Gen 1–5)</option><option value="诺奖后代·other" data-page-node-id="tBZpHa9lt9eZa7NkdpVvrF">Descendant · other (Gen 6–10)</option><option value="非诺奖后代" data-page-node-id="RfKnoJwrNbTxLFAL0CwcGj">Non-descendants</option></select>
+        <select id="f-subfield" data-page-node-id="jgVOQy7nAVAxLhqnOmvUdM"><option value="" data-page-node-id="QN0YaY1RM6chEB8E0Qw9XS">All subfields</option></select>
+        <select id="f-year" data-page-node-id="yGRQFJpRy0LocEnldGC8WL"><option value="" data-page-node-id="jRmBaLKvjAMW7mfuq6B1qC">All years</option><option data-page-node-id="v0T6B4lwIqUuP9PI7owWwB">2016</option><option data-page-node-id="3vLFIsfe5P2Qc1vdBKE4y0">2017</option><option data-page-node-id="r0E1rz5EM6ImAnc3II53mi">2018</option><option data-page-node-id="ehn4FQ3489jClBSpfe8ms0">2019</option><option data-page-node-id="Qak6Smx8AYEHOvjKu3jBZB">2020</option><option data-page-node-id="ajDB8t4XPuzDsTfGRMl702">2021</option><option data-page-node-id="CEeKeVFeBaQbsobk2pfGTs">2022</option><option data-page-node-id="jtFhVI1ba1oQUmKyuYH57x">2023</option><option data-page-node-id="wizTTFCXFXd7CmzpagKQCz">2024</option><option data-page-node-id="fcImJV3BNHxEtSyfPZFx9J">2025</option></select>
+        <input type="text" id="f-search" placeholder="Search title / author / field / MeSH…" data-page-node-id="HrQ132HszMh5DO70ecwD1E">
+        <span class="count" id="count" data-page-node-id="mE1ieFADBVQkJxHgLEjrut"></span>
+      </div>
+      <div class="filters" style="border:1px solid #E2E4E8;border-radius:10px;padding:12px 14px;margin-bottom:16px;background:#FAFBFC">
+        <input type="text" id="f-person" placeholder="Search author name (includes their descendants' papers)…" style="width:340px">
+        <button id="btn-person" style="font:inherit;font-size:13px;padding:7px 16px;border:1px solid var(--blue);border-radius:8px;background:var(--blue);color:#fff;cursor:pointer">Search lineage</button>
+        <span id="personResult" style="font-size:12.5px;color:var(--muted);margin-left:8px"></span>
+      </div>
+      <div class="chart" id="ch-subfield" style="margin:0 0 18px" data-page-node-id="Cr8J5kJzh9MXE578djO0xM"></div>
+      <table data-page-node-id="T6A6OHOCTwVCt2Cqjd5IuZ">
+        <thead data-page-node-id="otQotPC9kjZdr27JzocZDz"><tr data-page-node-id="XxvRDzFJeRO3NVl2yFqma8">
+          <th style="width:86px" data-page-node-id="By7ubu7Tzl3JJxsB8FCfnb">PMID</th><th data-page-node-id="pesgTY0TCKNtYtJGg6wfi8">Title</th><th style="width:70px" data-page-node-id="M40i3uSpEWjhJvNcASaKxI">Journal</th><th style="width:52px" data-page-node-id="tXNxv1UGkNzTKA9isvNYQ7">Year</th>
+          <th style="width:150px" data-page-node-id="B4B0xEQN6wwD7qz0AeBbdL">Last (corresponding) author</th><th style="width:130px" data-page-node-id="aEDV0bK4JeDiD6XiZcxUUi">Class</th><th style="width:90px">Branches</th><th data-page-node-id="lbY2s1qHs0pR7JGdhO1oV4">Subfield / MeSH terms</th>
+        </tr></thead>
+        <tbody id="tbody" data-page-node-id="QuBw1zc0qSjMX8u8HieJHL"></tbody>
+      </table>
+      <div class="pager" id="pager" data-page-node-id="adbrTmNEU4JBasLkdJY3z5"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="methodsPanel" data-page-node-id="rZTvuKbWO6HOO3nQt0Y8Gs">
+    <h2 data-page-node-id="Hdl50EdMEcOTbpMIeOkcOR">Methods and definitions</h2>
+    <div style="font-size:13px;color:#3A3F47;line-height:1.9" data-page-node-id="ixAmHJ2TSFCOEEDPRGPhd7">
+      <p data-page-node-id="HDgiq1q0a7xWOqO0Ke0fjO"><b data-page-node-id="PaB9GfmZtxE7jz61lE0efr">Corpus</b>: PubMed search for neuroscience papers published in Nature / Science / Cell between 2016-01-01 and 2025-12-31 (MeSH: Nervous System / Brain / Neurons / Neurosciences, or neuro* title/abstract prefix), restricted to research articles (reviews, news and comments excluded), 3,534 papers in total. Of these, 22 (classifiable ones) were published online in late 2025 and assigned 2026 issue dates by PubMed; they are excluded from the statistics by default; including them barely changes the results).</p>
+      <p data-page-node-id="K0eQSy6XQouuTcERtYx3SB"><b data-page-node-id="kP9IA8omUF9wDcYoGTnSfN">Lineage determination</b>: Anchored on the 744 science Nobel laureates marked award = "Nobel" in the Academic Family Tree (literature, peace, economics and theology prizes excluded), a breadth-first search follows mentor → trainee directed edges; anyone reachable within five generations is classified as a "Nobel descendant", recording the minimum generation; those reachable only at generations six to ten are listed separately as "descendant · other" (68 papers under the strict window), kept out of the five-generation primary share — the 42.1% baseline is likewise a five-generation figure, so mixing them in would be incomparable. <b data-page-node-id="wxFTlvGbndwkQonG3HuyVv">A note on data sources</b>: the Academic Family Tree is the umbrella database of academic genealogies across disciplines, and Neurotree is its neuroscience sub-tree. Lineage tracing and author matching in this analysis are performed on the <b data-page-node-id="dhMYCzSnEaPthaagv7hiKA">full database</b> (887,736 people) — otherwise Nobel laureates from physics, chemistry and physiology (and their cross-disciplinary mentoring chains) would be missed. The baseline population (42.1%) is restricted to the 155,684 scholars in the full database whose majorarea includes neuro.</p>
+      <p data-page-node-id="sD57yjhgU8lZv0RZxGu2r0"><b data-page-node-id="QFMO3FcA7nn47GR1AhtUTj">Disambiguation</b>: Last (corresponding) authors are matched to tree entries by "name + institution"; difficult cases are re-checked against ORCID employment records. Authors who cannot be uniquely resolved (true name collisions) or are absent from the tree are excluded and enter no denominator (classify-then-analyse). The percentages on this page therefore match the article: 81% refers to the share among classifiable papers.</p>
+      <p data-page-node-id="5u57S5oI2BIMsNLzH9qb33"><b data-page-node-id="XW4CnQ3biQ7llEZIiJA5AF">Baseline</b>: Among the 155,684 tree members whose majorarea includes neuro, five-generation Nobel descendants account for 42.1% — the 81% among flagship-journal last authors is roughly twice this baseline.</p>
+      <p data-page-node-id="EZ3NFXu92QdPOKcyQHnNcu"><b data-page-node-id="la6U2sAVkGibRSpDs9QfSG">Subfield classification</b>: A paper's "subfield" is mapped from its PubMed MeSH major topics by hand-curated keyword rules, taking a single primary label under the priority order "Disease &amp; Clinical &gt; Cognition &amp; Behavior &gt; Development &amp; Aging &gt; Systems &amp; Circuits &gt; Cellular &amp; Molecular &gt; Methods &amp; Computation" (papers often span several categories; only the most informative one is kept). Papers carrying only generic terms such as Brain or Neurons are labelled "Unclassified (generic terms)"; papers without MeSH annotation are labelled "No MeSH tags". Model organisms (Drosophila, zebrafish, C. elegans, etc.) are treated as research tools, not fields. This classification exists for browsing convenience and is not an official PubMed categorization.</p>
+      <p data-page-node-id="hBDFElESW3s7PQNDRu0Whd"><b data-page-node-id="GobK5uKKK826nT84qSHz8k">Per-capita rates: numerator and denominator</b>: The denominator is every tree member whose majorarea includes neuro; the numerator is those among them who served as last (corresponding) author of a CNS neuroscience paper in 2016–2025 (deduplicated). Cross-disciplinary CNS authors (no neuro tag in the tree, about three in ten of all matched last authors) are excluded from the numerator — they belong to other disciplinary populations, whose rates should be judged against their own population bases. Including them lowers the multiplier from 7.9 to 4.6 (a conservative lower bound); the conclusion is unchanged.</p>
+      <p data-page-node-id="Eba9E3jHItiZV5cX5OcE06"><b data-page-node-id="IeVbj1lLK79vIEAEiKtQBp">Known limitations</b>: The Academic Family Tree (including Neurotree) is a crowdsourced database with incomplete coverage that skews toward elite lineages (this may inflate the 81%); name disambiguation is heuristic. This analysis is supporting data for an opinion Comment (submitted to Nature), not a peer-reviewed quantitative study.</p>
+      <p data-page-node-id="bQq0DF4I7L8S1wbUkndGL5"><b data-page-node-id="pOgpuhLsWB9EK7gGtfblxh">Citation obligation</b>: Use of the dataset requires citing Liénard, J.F., Achakulvisut, T., Acuna, D.E. &amp; David, S.V. <i data-page-node-id="XXoxkdaCgPzjX71vdvw1eC">Nat. Commun.</i> 9, 4840 (2018); the paper list is from PubMed/NCBI.</p>
+    </div>
+  </div>
+
+  <footer data-page-node-id="qAi0hYFK5m9DxXZ4Z8VF4y">
+    This page is the companion data browser for the Nature Comment submission "The Academic Trees Behind Flagship Journals". Every paper can be verified individually via its PMID on PubMed. Data snapshot: Academic Family Tree 2025-11-10 · Page generated: 2026-09-26 · Statistical window: 2016–2025 (ten years).
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+const PER = 40;
+let curPage = 1, expandedPmid = null;
+
+const C = {red:'#A6242F', blue:'#2E5E8C', green:'#4F7A28', red2:'#BC5A57', gray:'#B9BEC6'};
+const genColor = g => ['#7A181F','#A6242F','#BC4A50','#CE7175','#DE9A9D'][g-1] || C.red;
+
+const $ = id => document.getElementById(id);
+
+// ---------- view switching ----------
+function showView(v){
+  document.body.dataset.view = v;
+  $('tab-overview').classList.toggle('on', v === 'overview');
+  $('tab-papers').classList.toggle('on', v === 'papers');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+$('tab-overview').addEventListener('click', () => showView('overview'));
+$('tab-papers').addEventListener('click', () => showView('papers'));
+$('gotoPapers').addEventListener('click', () => showView('papers'));
+
+// ---------- subfield taxonomy (single primary label, priority order) ----------
+// NOTE: rule names double as display labels AND comparison keys — English here.
+const SUBFIELD_RULES = [
+  ['Disease & Clinical', ['alzheimer','parkinson','neoplasm','tumor','pain','inflammat','epilep','depress','schizo','stroke','ischem','injur','neurodeg','disease','disorder','lesion','anxiety','addiction','substance','seizure','ataxia','dystonia','huntington','als','autism','adhd','migraine','encephal','mening','cancer','carcinoma','obesity','diabet','microbiome']],
+  ['Cognition & Behavior', ['learning','memory','decision','cognition','cognitive','reward','reinforc','navigation','perception','behav','social','aggress','vocaliz','feeding','maternal','sexual','sleep','attention','emotion','fear','motivation','movement','communication','language','consciousness','arousal','curiosity','planning','confidence','metacognit']],
+  ['Development & Aging', ['neurogenesis','stem cell','aging','develop','organoid','differenti','embryo','guidance','regenerat','maturation','juvenile','neonat','adolesc','senescence','progenitor','patterning','fate']],
+  ['Systems & Circuits', ['pathway','connectome','nerve net','cortex','cortical','hippocamp','striatum','thalamus','amygdala','hypothalamus','cerebell','basal ganglia','brain mapping','spinal','retina','superior colliculus','substantia','fornix','fibre','fiber','tract','nucleus accumbens','locus coeruleus','pedunculopontine','entorhinal','olfactory bulb','tectum','ganglion']],
+  ['Cellular & Molecular', ['neuron','synap','receptor','dopamine','glutamate','gaba','ion channel','action potential','calcium','transcript','signal transduc','neuropeptide','glia','astrocy','microglia','axon','dendrit','potassium','sodium','chloride','protein','gene','enhancer','epigen','transmission','inhibition','plasticity','phosph','kinase','second messenger','vesicle','cytoskel','membrane potential','membrane transport','excitability','homeostasis','metabol','mitochond','autoph','apoptosis','oxidative','immune','macrophage','complement','cytokine','interleukin','nf-kb','tlr','mhc']],
+  ['Methods & Computation', ['single-cell','optogenetic','brain-computer','models,','modeling','imaging','microscopy','sequencing','crispr','virus','tracing','electrophysi','recording','stimulation','decoder','neural network','deep learning','machine learning','artificial','algorithm','proteom','metabolom','cryo','super-resolution','two-photon','fmri','eeg','meg','biolumin','fluorescen','microendoscope','neuropixel']],
+];
+function subfieldOf(p){
+  const terms = (p.mesh||[]).join('§').toLowerCase();
+  if(!terms) return 'No MeSH tags';
+  for(const [name, kws] of SUBFIELD_RULES){
+    for(const k of kws){ if(terms.includes(k)) return name; }
+  }
+  return 'Unclassified (generic terms)';
+}
+
+// ---------- state ----------
+function filtered(){
+  const j = $('f-journal').value, c = $('f-class').value, y = $('f-year').value, sf = $('f-subfield').value,
+        q = $('f-search').value.trim().toLowerCase();
+  return PAPERS.filter(p => {
+    if(p.year === 2026) return false;
+    if(personFilter && !personFilter.pmids.has(p.pmid)) return false;
+    if(j && p.journal !== j) return false;
+    if(c === 'd' && !(p.gen >= 1 && p.gen <= 5)) return false;
+    if(c && c !== 'd' && p.cls !== c) return false;
+    if(y && String(p.year) !== y) return false;
+    if(sf && subfieldOf(p) !== sf) return false;
+    if(q){
+      const hay = (p.title + ' ' + p.author + ' ' + (p.field||'') + ' ' + (p.subfield||'') + ' ' + (p.mesh||[]).join(' ') + ' ' + (p.chain||[]).join(' ')).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+const isDesc = p => p.gen >= 1 && p.gen <= 5;   // five-gen primary criterion; other (gen 6-10) listed separately
+
+// ---------- charts ----------
+function donutChart(id, title, items, footnote){
+  // items: [label, value, color]; denominator = sum of items (laureates kept out via footnote)
+  const total = items.reduce((a,[,v]) => a+v, 0) || 1;
+  const R = 62, CX = 75, CY = 75;
+  let acc = 0; const segs = [];
+  items.forEach(([lab, v, col]) => {
+    const frac = v/total;
+    segs.push({lab, v, col, frac, acc});
+    acc += frac;
+  });
+  let svg = '';
+  segs.forEach(s => {
+    if(s.frac <= 0) return;
+    const a0 = s.acc, a1 = s.acc + s.frac;
+    const [x0,y0] = [CX + R*Math.sin(2*Math.PI*a0), CY - R*Math.cos(2*Math.PI*a0)];
+    const [x1,y1] = [CX + R*Math.sin(2*Math.PI*a1), CY - R*Math.cos(2*Math.PI*a1)];
+    const large = (a1-a0) > .5 ? 1 : 0;
+    svg += `<path d="M ${x0.toFixed(2)} ${y0.toFixed(2)} A ${R} ${R} 0 ${large} 1 ${x1.toFixed(2)} ${y1.toFixed(2)} L ${CX} ${CY} Z" fill="${s.col}" stroke="#fff" stroke-width="2.5"/>`;
+  });
+  const legend = segs.map(s =>
+    `<div><span class="sw" style="background:${s.col}"></span>${s.lab} <b>${s.v}</b> (<span class="pctv">${(100*s.frac).toFixed(1)}%</span>)</div>`).join('');
+  $(id).innerHTML = `<h3>${title}</h3>
+    <div class="donut">
+      <svg width="170" height="170" viewBox="0 0 150 150">${svg}</svg>
+      <div class="legend">${legend}${footnote ? `<div style="color:var(--muted);font-size:12px;margin-top:4px">${footnote}</div>` : ''}</div>
+    </div>`;
+}
+
+function colChart(id, title, items, refLine){
+  // items: [label, value, color, pctText, numText?]; bar height ∝ value/max (capped at 82%
+  // so number labels never overflow); refLine = {value, max, label}
+  const max = refLine ? Math.max(refLine.max, ...items.map(i => i[1])) : Math.max(1, ...items.map(i => i[1]));
+  const numFmt = v => Number.isInteger(v) ? v : v.toFixed(2);
+  const SCALE = 0.82;   // usable bar height as fraction of .cols height
+  const cols = items.map(([lab, v, col, pct, numText]) => `
+    <div class="col">
+      <div class="num">${numText || numFmt(v)}</div>
+      <div class="pct">${pct || ''}</div>
+      <div class="bar" style="height:${Math.max(1, SCALE*100*v/max)}%;background:${col}"></div>
+    </div>`).join('');
+  const ref = refLine ? `<div class="refline" style="bottom:${SCALE*100*refLine.value/max}%">${refLine.label}</div>` : '';
+  const labels = items.map(([lab]) => `<div>${lab}</div>`).join('');
+  $(id).innerHTML = `<h3>${title}</h3>
+    <div class="cols-wrap">
+      <div class="cols">${cols}${ref}</div>
+      <div class="xlabels">${labels}</div>
+    </div>`;
+}
+
+function lineChart(id, title, pts, refVal, refLabel, unit){
+  // pts: [label, value]; y from 0; dashed reference line
+  const W = 340, H = 190, P = {l:46, r:16, t:18, b:34};
+  // fixed integer ticks on the y-axis: 0/2/4/6/8% when values reach above 4%,
+  // otherwise 0/1/2/3% — no odd fractional tick values
+  const vmax = Math.max(refVal, ...pts.map(p => p[1]));
+  const ticks = vmax > 4 ? [0,2,4,6,8] : [0,1,2,3];
+  const top = ticks[ticks.length-1];
+  const x = i => P.l + (W-P.l-P.r) * (i/(pts.length-1));
+  const y = v => H-P.b - (H-P.t-P.b) * (v/top);
+  const path = pts.map((p,i) => `${i?'L':'M'} ${x(i).toFixed(1)} ${y(p[1]).toFixed(1)}`).join(' ');
+  // first label anchors right of its dot, last anchors left, so they never
+  // collide with the y-axis tick labels or the right edge
+  const anchorOf = i => i === 0 ? 'start' : (i === pts.length-1 ? 'end' : 'middle');
+  const dxOf = i => i === 0 ? 6 : (i === pts.length-1 ? -6 : 0);
+  const dots = pts.map((p,i) => `
+    <circle cx="${x(i).toFixed(1)}" cy="${y(p[1]).toFixed(1)}" r="4.5" fill="${genColor(i+1)}" stroke="#fff" stroke-width="1.5"/>
+    <text x="${x(i).toFixed(1)}" y="${(y(p[1])-11).toFixed(1)}" text-anchor="${anchorOf(i)}" dx="${dxOf(i)}" font-size="13" font-weight="700" fill="#1A1D21">${p[1].toFixed(1)}%</text>
+    <text x="${x(i).toFixed(1)}" y="${H-14}" text-anchor="middle" font-size="11" fill="#6B7280">${p[0]}</text>`).join('');
+  const grid = ticks.map(t => `
+    <line x1="${P.l}" x2="${W-P.r}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}" stroke="#F0F1F3" stroke-width="1"/>
+    <text x="${P.l-6}" y="${(y(t)+4).toFixed(1)}" text-anchor="end" font-size="9.5" fill="#9CA3AF">${t}%</text>`).join('');
+  $(id).innerHTML = `<h3>${title}</h3>
+    <div class="linebox"><svg viewBox="0 0 ${W} ${H}">
+      ${grid}
+      <line x1="${P.l}" x2="${W-P.r}" y1="${y(refVal)}" y2="${y(refVal)}" stroke="#2E5E8C" stroke-width="1.8" stroke-dasharray="6 4"/>
+      <text x="${P.l+6}" y="${(y(refVal)-5).toFixed(1)}" text-anchor="start" font-size="10.5" font-weight="700" fill="#2E5E8C">${refLabel}</text>
+      <path d="${path}" fill="none" stroke="#A6242F" stroke-width="2.5" stroke-linejoin="round"/>
+      ${dots}
+    </svg>
+    <div class="foot">Y-axis: share of that generation's neuro-tagged tree scholars who served as last (corresponding) author of a CNS paper (${unit || '%'}). Red line = Nobel descendants by generation; blue dashed = non-descendant control (${refVal.toFixed(2)}%, i.e. ${(refVal*10).toFixed(1)}‰).</div></div>`;
+}
+
+
+// ---------- 10-year trend ----------
+function trendChart(id, rows){
+  const byYear = {};
+  rows.forEach(p => {
+    if(p.cls === '诺奖得主本人' || p.cls === '诺奖后代·other') return;
+    const y = p.year;
+    if(!byYear[y]) byYear[y] = {d:0, n:0};
+    if(p.gen >= 1) byYear[y].d++; else byYear[y].n++;
+  });
+  const years = Object.keys(byYear).map(Number).sort((a,b)=>a-b).filter(y => byYear[y].d + byYear[y].n >= 20);
+  if(years.length < 3){ $(id).innerHTML = ''; return; }
+  const shares = years.map(y => 100*byYear[y].d/(byYear[y].d+byYear[y].n));
+  const W = 980, H = 230, P = {l:52, r:20, t:22, b:36};
+  const ymin = Math.min(42.1, ...shares) - 4, ymax = Math.max(42.1, ...shares) + 4;
+  const x = i => P.l + (W-P.l-P.r) * (i/(years.length-1));
+  const y = v => H-P.b - (H-P.t-P.b) * (v-ymin)/(ymax-ymin);
+  const path = shares.map((v,i) => `${i?'L':'M'} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
+  const dots = years.map((yr,i) => `
+    <circle cx="${x(i).toFixed(1)}" cy="${y(shares[i]).toFixed(1)}" r="4.5" fill="#A6242F" stroke="#fff" stroke-width="1.5"/>
+    <text x="${x(i).toFixed(1)}" y="${(y(shares[i])-11).toFixed(1)}" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A1D21">${shares[i].toFixed(1)}%</text>
+    <text x="${x(i).toFixed(1)}" y="${H-13}" text-anchor="middle" font-size="11" fill="#6B7280">${yr}</text>
+    <text x="${x(i).toFixed(1)}" y="${H-2}" text-anchor="middle" font-size="9" fill="#9CA3AF">${byYear[yr].d}+${byYear[yr].n}</text>`).join('');
+  const grid = [0.25,0.5,0.75,1].map(f => {
+    const v = ymin + (ymax-ymin)*f;
+    return `<line x1="${P.l}" x2="${W-P.r}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}" stroke="#F0F1F3"/>
+    <text x="${P.l-6}" y="${(y(v)+4).toFixed(1)}" text-anchor="end" font-size="10" fill="#9CA3AF">${v.toFixed(0)}%</text>`;
+  }).join('');
+  const mean = shares.reduce((a,b)=>a+b,0)/shares.length;
+  $(id).innerHTML = `<h3>A decade, barely any change (each year: share of papers from Nobel lineages; dashed = Neurotree baseline 42.1%; ten-year mean ${mean.toFixed(1)}%)</h3>
+    <div class="linebox"><svg viewBox="0 0 ${W} ${H}" style="max-width:100%">
+      ${grid}
+      <line x1="${P.l}" x2="${W-P.r}" y1="${y(42.1)}" y2="${y(42.1)}" stroke="#2E5E8C" stroke-width="1.8" stroke-dasharray="6 4"/>
+      <text x="${W-P.r}" y="${(y(42.1)-5).toFixed(1)}" text-anchor="end" font-size="11" font-weight="700" fill="#2E5E8C">Neurotree baseline 42.1%</text>
+      <path d="${path}" fill="none" stroke="#A6242F" stroke-width="2.5" stroke-linejoin="round"/>
+      ${dots}
+    </svg>
+    <div class="foot">Small text under each point = Gen 1–5 descendant + non-descendant papers that year (years with too few papers not shown; 'other' papers excluded). Points update with the filters above.</div></div>`;
+}
+
+function barChart(id, title, items){
+  const max = Math.max(1, ...items.map(i => i[1]));
+  $(id).innerHTML = `<h3>${title}</h3>` + items.map(([name, v, col, pct]) => `
+    <div class="bar-row">
+      <div class="name" title="${name}">${name}</div>
+      <div class="track"><div class="fill" style="width:${100*v/max}%;background:${col}"></div></div>
+      <div class="val"><b>${v}%</b>${pct ? `<span class="pct">${pct}</span>` : ''}</div>
+    </div>`).join('');
+}
+
+// ---------- stats & charts ----------
+function render(){
+  const rows = filtered();
+  const desc = rows.filter(isDesc), oth = rows.filter(p => p.cls === '诺奖后代·other'),
+        non = rows.filter(p => p.cls === '非诺奖后代'),
+        lau = rows.filter(p => p.cls === '诺奖得主本人');
+  const cls = desc.length + oth.length + non.length;
+  const pct = cls ? (100*(desc.length + oth.length)/cls) : 0;
+
+  $('scopeNote').innerHTML = 'Current scope: papers <b>formally published 2016–2025</b> (22 online-first papers from late 2025 with 2026 issue dates are excluded; including them barely changes the results).';
+
+  const pctDescIncl = cls ? (100*(desc.length + oth.length)/cls).toFixed(1) : '0.0';
+  const pctNon = cls ? (100*non.length/cls).toFixed(1) : '0.0';
+  $('statgrid').innerHTML = `
+    <div class="stat red"><div class="v">${desc.length + oth.length}<span class="v-unit">papers</span><span class="v-pct">${pctDescIncl}%</span></div><div class="l">Last (corresponding) author traces to a Nobel laureate within ten mentor generations — Gen 1–5 plus Gen 6–10 "other" (within Neurotree, five-gen baseline: 42%)</div></div>
+    <div class="stat blue"><div class="v">${non.length}<span class="v-unit">papers</span><span class="v-pct">${pctNon}%</span></div><div class="l">No Nobel laureate within ten mentor generations</div></div>
+    <div class="stat green"><div class="v">${lau.length}<span class="v-unit">papers</span><span class="v-pct">separate</span></div><div class="l">The last author is a Nobel laureate (counted separately, kept out of the shares above)</div></div>
+    <div class="stat"><div class="v">${cls}<span class="v-unit">papers</span></div><div class="l">Papers with resolvable author lineage</div></div>
+    <div class="stat"><div class="v">${rows.length}<span class="v-unit">papers</span></div><div class="l">Total under current filters</div></div>`;
+
+  donutChart('ch-comp', 'About 4 in 5 papers come from Nobel lineages (share among papers with resolvable lineage; Gen 6–10 "other" included in descendants)',
+    [['Descendants (incl. other)', desc.length + oth.length, C.red], ['Non-descendants', non.length, C.blue]],
+    `Plus ${lau.length} papers by laureates themselves (counted separately, kept out of the denominator)`);
+
+  const gens = [1,2,3,4,5].map(g => rows.filter(p => p.gen === g).length);
+  const genSum = gens.reduce((a,b)=>a+b, 0) + oth.length || 1;
+  colChart('ch-gen', 'Fewer papers further from the laureate — yet even Gen 6+ "distant descendants" still publish (% = share of all descendant papers; other = Gen 6–10)',
+    [1,2,3,4,5].map((g,i) => [`Gen ${g}`, gens[i], genColor(g), (100*gens[i]/genSum).toFixed(1)+'%'])
+      .concat([['other', oth.length, C.gray, (100*oth.length/genSum).toFixed(1)+'%']]));
+
+  const journals = ['Nature','Science','Cell'];
+  colChart('ch-journal', 'The three flagship journals look nearly identical (% = descendant share within each journal; dashed line = Neurotree baseline 42%)',
+    journals.map(j => {
+      const r = rows.filter(p => p.journal === j), d = r.filter(isDesc).length;
+      const share = r.filter(p => p.cls !== '诺奖得主本人' && p.cls !== '诺奖后代·other').length;
+      const dp = share ? (100*d/share) : 0;
+      return [j, dp, C.red, dp.toFixed(2)+'%', `${d}/${share}`];
+    }),
+    {value: 42.1, max: 100, label: 'Neurotree baseline 42.1%'});
+
+  const sfCount = {}, sfDesc = {};
+  rows.forEach(p => {
+    if(p.cls === '诺奖后代·other') return;   // five-gen criterion; 'other' kept out of this chart
+    const sf = subfieldOf(p);
+    sfCount[sf] = (sfCount[sf]||0) + 1;
+    if(isDesc(p)) sfDesc[sf] = (sfDesc[sf]||0) + 1;
+  });
+  const sfOrder = Object.keys(SUBFIELD_RULES).map(i => SUBFIELD_RULES[i][0])
+    .concat(['Unclassified (generic terms)','No MeSH tags']);
+  // bar length ∝ descendant share within the subfield; counts shown in label
+  const sfItems = sfOrder.filter(sf => sfCount[sf])
+    .map(sf => {
+      const d = sfDesc[sf]||0, n = sfCount[sf], share = 100*d/n;
+      return [`${sf} (desc. ${d}/${n})`, +(100*d/n).toFixed(1), C.red2, n + ' papers'];
+    });
+  barChart('ch-subfield', 'Descendant share within each subfield (% = descendants / papers in the subfield; bar length = share)', sfItems);
+
+  // per-capita rates (fixed snapshot numbers, strict window) — CONSISTENT cut:
+  // numerator = neuro-tagged CNS senior authors only; denominator = neuro-tagged tree population
+  const POP = {desc: 65429, non: 90121, byGen: [1817, 9415, 20005, 20798, 13394]};
+  const AU_GEN = [134, 299, 268, 127, 41];             // neuro-tagged descendants by gen (2016-2025)
+  const N_DESC = 869, N_NON = 151;                    // neuro-tagged unique authors (2016-2025)
+  const rDesc = N_DESC/POP.desc*1000, rNon = N_NON/POP.non*1000;
+  const rDescPct = rDesc/10, rNonPct = rNon/10;
+  $('ratecards').innerHTML = `
+    <div class="ratecard"><div class="rv" style="color:var(--red)">${rDescPct.toFixed(2)}%</div><div class="rl">Nobel-lineage scholars who were<br>CNS last (corresponding) authors (≈1 in 76)</div></div>
+    <div class="ratecard"><div class="rv" style="color:var(--blue)">${rNonPct.toFixed(2)}%</div><div class="rl">Share among other scholars<br>(≈1 in 600)</div></div>
+    <div class="ratecard"><div class="rv">${(rDesc/rNon).toFixed(1)} ×</div><div class="rl">Per-capita advantage<br>(not just headcount)</div></div>
+    <div class="ratecard"><div class="rv" style="color:#8A6A50">${(AU_GEN[0]/POP.byGen[0]*100).toFixed(2)}%</div><div class="rl">Laureate's direct students (Gen 1)<br>≈1 in 14</div></div>`;
+  lineChart('ch-genrate', 'How many per generation published in a flagship journal? (% = CNS last (corresponding) authors as a share of that generation)',
+    [1,2,3,4,5].map((g,i) => [`Gen ${g}`, AU_GEN[i]/POP.byGen[i]*100]),
+    rNonPct, `Others ${rNonPct.toFixed(2)}%`);
+
+  trendChart('ch-trend', rows);
+
+  // Multi-branch Nobel lineage statistics (fixed snapshot, independent of filters)
+  try { renderBranchCards(); } catch(e) { console.warn('renderBranchCards:', e); }
+
+  // Per-capita rates by branch count (Overview panel)
+  try { renderBranchRateCards(); } catch(e) { console.warn('renderBranchRateCards:', e); }
+
+  renderTable(rows);
+}
+
+// ---------- table ----------
+function badge(p){
+  if(p.cls === '诺奖得主本人') return `<span class="badge b-lau">Nobel laureate</span>`;
+  if(p.cls === '诺奖后代·other') return `<span class="badge b-oth">Descendant · other (Gen ${p.gen})</span>`;
+  if(p.cls === '非诺奖后代') return `<span class="badge b-non">Non-descendant</span>`;
+  if(p.gen >= 1) return `<span class="badge b-desc">Descendant · Gen ${p.gen}</span>`;
+  return '';
+}
+
+// ---------- multi-branch Nobel lineage ----------
+function renderBranchCards(){
+  const auByBranch = {1:0, 2:0, '3+':0};
+  const papersByBranch = {1:0, 2:0, '3+':0};
+  const seen1 = new Set(), seen2 = new Set(), seen3 = new Set();
+  PAPERS.forEach(p => {
+    if(p.year === 2026) return;
+    if(!(p.gen >= 1 && p.gen <= 5)) return;
+    const nb = p.nbranch || 0;
+    const key = nb >= 3 ? '3+' : (nb === 2 ? '2' : '1');
+    papersByBranch[key]++;
+    const pidSet = nb >= 3 ? seen3 : (nb === 2 ? seen2 : seen1);
+    if(p.pid && !pidSet.has(p.pid)){ pidSet.add(p.pid); auByBranch[key]++; }
+  });
+  const totalAu = auByBranch['1'] + auByBranch['2'] + auByBranch['3+'];
+  const totalPapers = papersByBranch['1'] + papersByBranch['2'] + papersByBranch['3+'];
+  if(totalAu === 0){ $('branchCards').innerHTML = ''; return; }
+  $('branchCards').innerHTML = `
+    <div class="ratecard"><div class="rv" style="color:var(--red)">${auByBranch['1']}</div><div class="rl">${(auByBranch['1']/totalAu*100).toFixed(1)}% of descendant authors<br>${papersByBranch['1']} papers — single Nobel lineage</div></div>
+    <div class="ratecard"><div class="rv" style="color:#8A6A50">${auByBranch['2']}</div><div class="rl">${(auByBranch['2']/totalAu*100).toFixed(1)}% of descendant authors<br>${papersByBranch['2']} papers — two Nobel lineages</div></div>
+    <div class="ratecard"><div class="rv" style="color:var(--green)">${auByBranch['3+']}</div><div class="rl">${(auByBranch['3+']/totalAu*100).toFixed(1)}% of descendant authors<br>${papersByBranch['3+']} papers — three or more lineages</div></div>
+    <div class="ratecard"><div class="rv">${totalAu}</div><div class="rl">Total unique descendant authors<br>${totalPapers} descendant papers (Gen 1–5)</div></div>`;
+}
+
+function branchCell(p){
+  if(!p.nbranch) return '<i style="color:#B9BEC6">—</i>';
+  const nb = p.nbranch;
+  if(nb === 1) return `<span class="badge" style="background:var(--red-bg);color:var(--red)">1 branch</span>`;
+  if(nb === 2) return `<span class="badge" style="background:#FAEEDA;color:#854F0B">2 branches</span>`;
+  return `<span class="badge" style="background:var(--green-bg);color:var(--green)">${nb} branches</span>`;
+}
+
+function renderBranchRateCards(){
+  // Per-capita rates by generation (1-5) vs non-descendants
+  const popByGen = POP.byGen;   // [1817, 9415, 20005, 20798, 13394]
+  const auByGen  = AU_GEN;      // [134, 299, 268, 127, 41]
+  const popNon   = POP.non;     // 90121
+  const auNon    = N_NON;       // 151
+
+  const genColors = ['var(--red)', '#C25E3A', '#8A6A50', 'var(--green)', '#5B8A6B'];
+  const genLabels = ['Gen 1 (direct students)', 'Gen 2', 'Gen 3', 'Gen 4', 'Gen 5'];
+
+  let cards = '';
+  for (let i = 0; i < 5; i++) {
+    const au = auByGen[i], p = popByGen[i];
+    const pct = au / p * 100;
+    cards += `<div class="ratecard"><div class="rv" style="color:${genColors[i]}">${pct.toFixed(2)}%</div><div class="rl">${genLabels[i]}<br>${au}/${p.toLocaleString()} scholars (≈1 in ${Math.round(p/au)})</div></div>`;
+  }
+  // Non-descendant control
+  const rNonPct = auNon / popNon * 100;
+  cards += `<div class="ratecard"><div class="rv" style="color:var(--blue)">${rNonPct.toFixed(2)}%</div><div class="rl">Non-descendants (control)<br>${auNon}/${popNon.toLocaleString()} scholars (≈1 in ${Math.round(popNon/auNon)})</div></div>`;
+
+  // Gen 1 advantage
+  const r1 = auByGen[0] / popByGen[0] * 100;
+  const rNon = auNon / popNon * 100;
+  cards += `<div class="ratecard"><div class="rv">${(r1 / rNon).toFixed(1)} ×</div><div class="rl">Gen 1 advantage<br>over non-descendants</div></div>`;
+
+  $('branchRateCards').innerHTML = cards;
+}
+
+function renderTable(rows){
+  const pages = Math.max(1, Math.ceil(rows.length / PER));
+  if(curPage > pages) curPage = 1;
+  const page = rows.slice((curPage-1)*PER, curPage*PER);
+  $('count').textContent = `${rows.length} papers · page ${curPage}/${pages}`;
+
+  let html = '';
+  page.forEach(p => {
+    const isOwn = personFilter && p.author && p.author.toLowerCase().includes(personFilter.query.toLowerCase());
+    const isDesc = personFilter && p.chain && p.chain.some(n => n.toLowerCase().includes(personFilter.query.toLowerCase())) && !isOwn;
+    const relTag = isOwn ? `<span class="badge" style="background:var(--red-bg);color:var(--red);font-size:10px;margin-left:4px">SELF</span>` : (isDesc ? `<span class="badge" style="background:var(--blue-bg);color:var(--blue);font-size:10px;margin-left:4px">DESCENDANT</span>` : '');
+    html += `<tr class="row" data-pmid="${p.pmid}">
+      <td><a class="pmid-link" href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/" target="_blank" onclick="event.stopPropagation()">${p.pmid}</a></td>
+      <td class="title-cell">${p.title || '<i>(no cached title)</i>'}</td>
+      <td class="t-j">${p.journal}</td><td>${p.year}</td>
+      <td>${p.author}${relTag}</td><td>${badge(p)}</td><td>${branchCell(p)}</td>
+      <td class="mesh-cell"><b style="color:var(--ink)">${subfieldOf(p)}</b><br>${(p.mesh||[]).slice(0,3).map(m => `<span>${m}</span>`).join('') || '<i style="color:#B9BEC6">—</i>'}</td>
+    </tr>`;
+    if(expandedPmid === p.pmid) html += detailRow(p);
+  });
+  $('tbody').innerHTML = html;
+
+  let ph = `<button ${curPage===1?'disabled':''} data-pg="${curPage-1}">‹ Prev</button>`;
+  const start = Math.max(1, curPage-3), end = Math.min(pages, start+6);
+  for(let i = start; i <= end; i++) ph += `<button class="${i===curPage?'on':''}" data-pg="${i}">${i}</button>`;
+  ph += `<button ${curPage===pages?'disabled':''} data-pg="${curPage+1}">Next ›</button>`;
+  $('pager').innerHTML = ph;
+}
+
+function detailRow(p){
+  let lineageLab = 'NOBEL LINEAGE (ANCESTOR → LAST (CORRESPONDING) AUTHOR)', chainHtml = '';
+  if(p.chain && p.chain.length){
+    chainHtml = `<ol class="chain">` + p.chain.map((n,i) => {
+        const isA = i === 0, isT = i === p.chain.length-1;
+        return `<li>${n}${isA ? `<span class="nobel-tag">Nobel${p.anchorField ? ' · ' + p.anchorField : ''}</span>` : ''}${isT ? `<span class="gen-note">← last author of this paper</span>` : ''}</li>`;
+      }).join('') + `</ol>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:2px">${p.gen === 0
+        ? 'The last author of this paper is a Nobel laureate.'
+        : `Generation ${p.gen} from the Nobel ancestor (${p.gen === 1 ? 'direct mentor–student' : (p.gen-1) + ' intermediate mentor' + (p.gen > 2 ? 's' : '')})${p.gen > 5 ? ' — beyond the five-generation primary criterion, listed separately as "other"' : ''}. Lineage is the shortest BFS path to the nearest Nobel ancestor.`}</div>`;
+  } else if(p.nchain && p.nchain.length){
+    // non-descendant: show which mentor lineage the author comes from
+    lineageLab = 'MENTOR LINEAGE (ANCESTOR → LAST (CORRESPONDING) AUTHOR)';
+    const anchorTag = p.nnobel
+      ? `<span class="nobel-tag">Nobel · gen ${p.ngen} (beyond the 5-gen criterion)</span>`
+      : `<span class="h-tag">h-index ${p.nh}${p.narea ? ' · ' + p.narea : ''}</span>`;
+    chainHtml = `<ol class="chain">` + p.nchain.map((n,i) => {
+        const isA = i === 0, isT = i === p.nchain.length-1;
+        return `<li>${n}${isA ? anchorTag : ''}${isT ? `<span class="gen-note">← last author of this paper</span>` : ''}</li>`;
+      }).join('') + `</ol>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:2px">No Nobel ancestor within five generations. The lineage is traced up to ten mentor generations; the anchor is the highest-h-index scholar in the lineage (h-index from the tree snapshot; where none is available, the earliest traceable ancestor). Generation ${p.ngen} from the anchor.</div>`;
+  } else {
+    chainHtml = `<div class="empty-chain">This author is in the tree, but no Nobel ancestor is reachable within five generations.</div>`;
+  }
+
+  return `<tr class="detail"><td colspan="8">
+    <div class="d-grid">
+      <div>
+        <div class="d-title">${p.title || ''}</div>
+        <div class="d-lab">SUBFIELD (FROM MESH TERMS)</div>
+        <div class="d-val" style="font-weight:600">${subfieldOf(p)}</div>
+        <div class="d-lab">PUBMED MESH MAJOR TOPICS</div>
+        <div class="d-mesh">${(p.mesh||[]).map(m => `<span>${m}</span>`).join('') || '—'}</div>
+        <div class="d-lab">NEUROTREE PROFILE</div>
+        <div class="d-val">Field: ${p.field || '—'}${p.subfield ? ` · Focus: ${p.subfield}` : ''}${p.inst ? `<br>Institution (per tree): ${p.inst}` : ''}</div>
+        ${p.nbranch && p.nbranch > 0 && p.branches ? `<div class="d-lab">NOBEL LINEAGE BRANCHES (${p.nbranch})</div>
+        <div class="d-val" style="font-size:12.5px;line-height:1.7">${(p.branches||[]).map(b => `<div><b>${b.name}</b> <span style="color:var(--muted)">— Gen ${b.gen}${b.field ? ' · ' + b.field : ''}</span></div>`).join('')}</div>` : ''}
+        <a class="d-pubmed" href="https://pubmed.ncbi.nlm.nih.gov/${p.pmid}/" target="_blank">View on PubMed ${p.pmid} ↗</a>
+      </div>
+      <div>
+        <div class="d-lab" style="margin-top:0">${lineageLab}</div>
+        ${chainHtml}
+      </div>
+    </div>
+  </td></tr>`;
+}
+
+// ---------- events ----------
+document.querySelectorAll('.filters select, #f-search').forEach(el =>
+  el.addEventListener('input', () => { curPage = 1; render(); }));
+
+// ---------- person lineage search ----------
+let personFilter = null;  // {query, authorPids: Set, matchType}
+
+$('btn-person').addEventListener('click', doPersonSearch);
+$('f-person').addEventListener('keydown', e => { if(e.key === 'Enter') doPersonSearch(); });
+
+function doPersonSearch(){
+  const q = $('f-person').value.trim();
+  if(!q){ personFilter = null; $('personResult').textContent = ''; curPage = 1; render(); return; }
+  const ql = q.toLowerCase();
+  // Find matching authors in PAPERS (by name, case-insensitive, partial match)
+  const matchedPids = new Set();
+  const matchedNames = new Set();
+  PAPERS.forEach(p => {
+    if(p.author && p.author.toLowerCase().includes(ql)){
+      matchedNames.add(p.author);
+      if(p.pid) matchedPids.add(p.pid);
+    }
+  });
+  if(matchedPids.size === 0){
+    $('personResult').innerHTML = `<span style="color:#A6242F">No author found matching "${q}"</span>`;
+    personFilter = null; curPage = 1; render(); return;
+  }
+  // For each matched pid, find descendants via LAUREATE_DESCENDANTS if they are laureates,
+  // or find their students via tree (simplified: search for papers where chain contains this author)
+  const descendantPids = new Set();
+  matchedPids.forEach(pid => {
+    // If this person is a Nobel laureate with descendants in CNS, add them
+    if(LAUREATE_DESCENDANTS[pid]){
+      LAUREATE_DESCENDANTS[pid].forEach(name => {
+        // Find papers by this descendant name
+      });
+    }
+  });
+  // Also find papers where the chain (lineage) contains the searched author name
+  const chainMatchPapers = PAPERS.filter(p =>
+    p.chain && p.chain.some(n => n.toLowerCase().includes(ql)) && p.year !== 2026
+  );
+  // Papers by the author themselves
+  const ownPapers = PAPERS.filter(p => p.author && p.author.toLowerCase().includes(ql) && p.year !== 2026);
+  // Papers by descendants (chain contains the author name, but author is not the searched person)
+  const descPapers = chainMatchPapers.filter(p => !(p.author && p.author.toLowerCase().includes(ql)));
+  // Merge unique
+  const allPmids = new Set();
+  ownPapers.forEach(p => allPmids.add(p.pmid));
+  descPapers.forEach(p => allPmids.add(p.pmid));
+  personFilter = {query: q, pmids: allPmids, ownCount: ownPapers.length, descCount: descPapers.length};
+  const total = ownPapers.length + descPapers.length;
+  $('personResult').innerHTML = `<span style="color:var(--blue)"><b>${q}</b>: ${ownPapers.length} own papers + ${descPapers.length} descendants' papers = ${total} total</span>`;
+  curPage = 1; render();
+}
+$('tbody').addEventListener('click', e => {
+  const tr = e.target.closest('tr.row');
+  if(!tr) return;
+  const pmid = tr.dataset.pmid;
+  expandedPmid = expandedPmid === pmid ? null : pmid;
+  render();
+});
+$('pager').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b || b.disabled) return;
+  curPage = +b.dataset.pg; render();
+  $('papersPanel').scrollIntoView({behavior:'smooth'});
+});
+
+// populate subfield filter options
+(function(){
+  const seen = new Set();
+  PAPERS.forEach(p => seen.add(subfieldOf(p)));
+  const order = Object.keys(SUBFIELD_RULES).map(i => SUBFIELD_RULES[i][0]);
+  [...seen].sort((a,b) => {
+    const ia = order.indexOf(a), ib = order.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  }).forEach(sf => {
+    const o = document.createElement('option');
+    o.value = sf; o.textContent = `${sf} (${PAPERS.filter(p => subfieldOf(p) === sf).length} papers)`;
+    $('f-subfield').appendChild(o);
+  });
+})();
+
+render();
+</script>
+</body>
+</html>
